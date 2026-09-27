@@ -1,0 +1,2084 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#111318">
+<meta name="description" content="Kiosk Hochheim Mitte – Alte Malzfabrik 1, 65239 Hochheim am Main. Öffnungszeiten, Kontakt, Google-Bewertungen und Route.">
+<title>Kiosk Hochheim Mitte</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0d0f13;
+  --surface:#15181e;
+  --surface2:#1c2028;
+  --text:#f4f1e8;
+  --muted:#a8adb8;
+  --line:rgba(255,255,255,.09);
+  --lime:#d8ff4f;
+  --yellow:#ffd34d;
+  --blue:#78a8ff;
+  --green:#37d67a;
+  --shadow:0 25px 70px rgba(0,0,0,.38);
+  --radius:28px;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:"DM Sans",sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(circle at 85% 8%,rgba(216,255,79,.09),transparent 28%),
+    radial-gradient(circle at 8% 45%,rgba(120,168,255,.08),transparent 25%),
+    var(--bg);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+img{
+  display:block;
+  max-width:100%;
+}
+
+.container{
+  width:min(1160px,92%);
+  margin:auto;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(13,15,19,.72);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid transparent;
+  transition:.35s;
+}
+
+.nav.scrolled{
+  border-color:var(--line);
+  background:rgba(13,15,19,.9);
+}
+
+.nav-inner{
+  height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  font-family:"Space Grotesk";
+  font-weight:700;
+  letter-spacing:-.04em;
+  font-size:1.15rem;
+}
+
+.brand span{
+  color:var(--lime);
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  color:#d9dce2;
+  font-size:.95rem;
+}
+
+.nav-links a{
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--lime);
+}
+
+.nav-actions{
+  display:flex;
+  gap:10px;
+}
+
+.icon-btn,
+.menu-btn{
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  display:grid;
+  place-items:center;
+  background:var(--surface2);
+  cursor:pointer;
+}
+
+.menu-btn{
+  display:none;
+  color:var(--text);
+  font-size:1.2rem;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-height:50px;
+  padding:0 19px;
+  border-radius:15px;
+  border:1px solid var(--line);
+  font-weight:700;
+  transition:
+    transform .25s,
+    box-shadow .25s,
+    background .25s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 14px 35px rgba(0,0,0,.25);
+}
+
+.btn-primary{
+  background:var(--lime);
+  color:#10120d;
+  border-color:var(--lime);
+}
+
+.btn-dark{
+  background:var(--surface2);
+}
+
+.btn-google{
+  background:#fff;
+  color:#1f1f1f;
+  border-color:#fff;
+}
+
+.btn-outline{
+  background:transparent;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  min-height:100vh;
+  display:grid;
+  place-items:center;
+  padding:130px 0 70px;
+  position:relative;
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.02fr .98fr;
+  gap:55px;
+  align-items:center;
+}
+
+.eyebrow{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(216,255,79,.08);
+  border:1px solid rgba(216,255,79,.22);
+  color:var(--lime);
+  font-size:.82rem;
+  font-weight:700;
+  margin-bottom:20px;
+}
+
+.live-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:var(--green);
+  box-shadow:0 0 0 6px rgba(55,214,122,.12);
+  animation:pulse 1.8s infinite;
+}
+
+@keyframes pulse{
+  50%{
+    box-shadow:0 0 0 11px rgba(55,214,122,0);
+  }
+}
+
+h1{
+  font-family:"Space Grotesk";
+  font-size:clamp(3.2rem,7vw,6.8rem);
+  line-height:.91;
+  letter-spacing:-.065em;
+  margin-bottom:24px;
+}
+
+h1 span{
+  color:var(--lime);
+}
+
+.hero-copy{
+  font-size:1.08rem;
+  color:var(--muted);
+  max-width:600px;
+}
+
+.hero-buttons{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin-top:30px;
+}
+
+.hero-info{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:25px;
+}
+
+.info-pill{
+  padding:9px 12px;
+  border-radius:999px;
+  background:var(--surface);
+  border:1px solid var(--line);
+  color:#dfe2e8;
+  font-size:.88rem;
+}
+
+.hero-visual{
+  position:relative;
+}
+
+.photo-card{
+  position:relative;
+  border-radius:34px;
+  overflow:hidden;
+  border:1px solid var(--line);
+  box-shadow:var(--shadow);
+  background:var(--surface);
+}
+
+.photo-card img{
+  width:100%;
+  height:570px;
+  object-fit:cover;
+  object-position:center;
+}
+
+.photo-overlay{
+  position:absolute;
+  left:18px;
+  right:18px;
+  bottom:18px;
+  padding:17px;
+  border-radius:22px;
+  background:rgba(13,15,19,.82);
+  backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.photo-overlay strong{
+  font-family:"Space Grotesk";
+  font-size:1.05rem;
+}
+
+.photo-overlay small{
+  display:block;
+  color:var(--muted);
+  margin-top:3px;
+}
+
+.float-rating{
+  position:absolute;
+  top:24px;
+  left:-28px;
+  background:#fff;
+  color:#17191d;
+  border-radius:20px;
+  padding:14px 17px;
+  box-shadow:var(--shadow);
+  font-weight:700;
+  z-index:2;
+}
+
+.float-rating b{
+  font-size:1.5rem;
+}
+
+.stars{
+  color:#f5b900;
+  letter-spacing:1px;
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:105px 0;
+}
+
+.section-head{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:25px;
+  margin-bottom:38px;
+}
+
+.kicker{
+  color:var(--lime);
+  font-weight:700;
+  font-size:.78rem;
+  text-transform:uppercase;
+  letter-spacing:.14em;
+}
+
+h2{
+  font-family:"Space Grotesk";
+  font-size:clamp(2rem,4vw,3.5rem);
+  line-height:1;
+  letter-spacing:-.045em;
+  margin-top:8px;
+}
+
+.section-head p{
+  max-width:470px;
+  color:var(--muted);
+}
+
+.grid-3{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.card{
+  background:linear-gradient(145deg,var(--surface),#111419);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:27px;
+  box-shadow:0 15px 45px rgba(0,0,0,.16);
+}
+
+.card-icon{
+  width:52px;
+  height:52px;
+  border-radius:17px;
+  display:grid;
+  place-items:center;
+  background:rgba(216,255,79,.1);
+  color:var(--lime);
+  font-size:1.35rem;
+  margin-bottom:20px;
+}
+
+.card h3{
+  font-family:"Space Grotesk";
+  font-size:1.25rem;
+  margin-bottom:8px;
+}
+
+.card p{
+  color:var(--muted);
+}
+
+/* =========================
+   OPENING HOURS
+========================= */
+
+.open-grid{
+  display:grid;
+  grid-template-columns:.8fr 1.2fr;
+  gap:18px;
+}
+
+.clock-card{
+  min-height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.clock{
+  font-family:"Space Grotesk";
+  font-size:clamp(3rem,7vw,6rem);
+  line-height:1;
+  letter-spacing:-.07em;
+  margin:25px 0 8px;
+}
+
+.date{
+  color:var(--muted);
+}
+
+.status{
+  display:inline-flex;
+  align-items:center;
+  gap:9px;
+  margin-top:24px;
+  padding:10px 13px;
+  border-radius:999px;
+  background:rgba(55,214,122,.1);
+  color:var(--green);
+  font-weight:700;
+  width:max-content;
+}
+
+.status.closed{
+  background:rgba(255,90,90,.1);
+  color:#ff8585;
+}
+
+.hours{
+  width:100%;
+  border-collapse:collapse;
+}
+
+.hours tr{
+  border-bottom:1px solid var(--line);
+}
+
+.hours tr:last-child{
+  border-bottom:0;
+}
+
+.hours td{
+  padding:16px 0;
+  color:#dfe2e8;
+}
+
+.hours td:last-child{
+  text-align:right;
+  font-weight:700;
+}
+
+.today td{
+  color:var(--lime);
+}
+
+.note{
+  font-size:.83rem;
+  color:var(--muted);
+  margin-top:17px;
+}
+
+/* =========================
+   GOOGLE REVIEWS
+========================= */
+
+.google-wrap{
+  display:grid;
+  grid-template-columns:.75fr 1.25fr;
+  gap:18px;
+  align-items:stretch;
+}
+
+.rating-card{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.rating-big{
+  font-family:"Space Grotesk";
+  font-size:5rem;
+  line-height:1;
+  letter-spacing:-.07em;
+}
+
+.rating-meta{
+  color:var(--muted);
+  margin-top:7px;
+}
+
+.review-bar{
+  display:grid;
+  grid-template-columns:24px 1fr 34px;
+  align-items:center;
+  gap:9px;
+  margin:9px 0;
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.bar{
+  height:9px;
+  background:#2b3039;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.bar i{
+  display:block;
+  height:100%;
+  background:linear-gradient(90deg,var(--yellow),var(--lime));
+  border-radius:inherit;
+}
+
+.review-list{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.review{
+  padding:23px;
+  border-radius:22px;
+  background:var(--surface2);
+  border:1px solid var(--line);
+}
+
+.review-top{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:12px;
+}
+
+.review-name{
+  font-weight:700;
+}
+
+.review-age{
+  font-size:.75rem;
+  color:var(--muted);
+}
+
+.review p{
+  color:#d2d5dc;
+}
+
+.review .stars{
+  margin-top:13px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:16px;
+}
+
+.gallery img{
+  width:100%;
+  height:100%;
+  min-height:260px;
+  object-fit:cover;
+  border-radius:25px;
+  border:1px solid var(--line);
+}
+
+.gallery-main{
+  height:520px;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:18px;
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  padding:18px 0;
+  border-bottom:1px solid var(--line);
+}
+
+.contact-item:last-child{
+  border-bottom:0;
+}
+
+.contact-icon{
+  width:48px;
+  height:48px;
+  border-radius:15px;
+  background:var(--surface2);
+  display:grid;
+  place-items:center;
+  color:var(--lime);
+  font-size:1.15rem;
+  flex:0 0 auto;
+}
+
+.contact-item span{
+  display:block;
+  color:var(--muted);
+  font-size:.82rem;
+}
+
+.contact-item strong{
+  font-size:1rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:40px 0;
+  color:var(--muted);
+}
+
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  align-items:center;
+}
+
+.footer-brand{
+  font-family:"Space Grotesk";
+  color:var(--text);
+  font-weight:700;
+}
+
+.footer-links{
+  display:flex;
+  gap:20px;
+  font-size:.9rem;
+}
+
+/* =========================
+   SCROLL ANIMATION
+========================= */
+
+.reveal{
+  opacity:0;
+  transform:translateY(30px);
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .menu-btn{
+    display:grid;
+  }
+
+  .hero-grid,
+  .open-grid,
+  .google-wrap,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .grid-3{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    padding-top:110px;
+  }
+
+  .photo-card img{
+    height:440px;
+  }
+
+  .float-rating{
+    left:15px;
+  }
+
+  .section-head{
+    display:block;
+  }
+
+  .section-head p{
+    margin-top:15px;
+  }
+}
+
+@media(max-width:620px){
+
+  section{
+    padding:75px 0;
+  }
+
+  .nav-inner{
+    height:68px;
+  }
+
+  .hero-buttons .btn{
+    width:100%;
+  }
+
+  h1{
+    font-size:3.35rem;
+  }
+
+  .photo-card img{
+    height:360px;
+  }
+
+  .review-list{
+    grid-template-columns:1fr;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery-main{
+    height:360px;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+}
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu{
+  display:none;
+  position:fixed;
+  top:68px;
+  left:0;
+  right:0;
+  z-index:999;
+  padding:15px;
+  background:rgba(13,15,19,.96);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--line);
+}
+
+.mobile-menu.open{
+  display:block;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:14px;
+  border-radius:12px;
+}
+
+.mobile-menu a:hover{
+  background:var(--surface2);
+}
+</style>
+</head>
+
+<body>
+
+<!-- =========================
+     NAVIGATION
+========================= -->
+
+<header class="nav" id="nav">
+
+  <div class="container nav-inner">
+
+    <a href="#top" class="brand">
+      KIOSK <span>HOCHHEIM MITTE</span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#oeffnungszeiten">Öffnungszeiten</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#fotos">Fotos</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+
+    <div class="nav-actions">
+
+      <a
+        class="icon-btn"
+        href="tel:+4961466077487"
+        aria-label="Anrufen">
+        ☎
+      </a>
+
+      <button
+        class="menu-btn"
+        id="menuBtn"
+        aria-label="Menü">
+        ☰
+      </button>
+
+    </div>
+
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+
+    <a href="#oeffnungszeiten">
+      Öffnungszeiten
+    </a>
+
+    <a href="#bewertungen">
+      Bewertungen
+    </a>
+
+    <a href="#fotos">
+      Fotos
+    </a>
+
+    <a href="#kontakt">
+      Kontakt
+    </a>
+
+  </div>
+
+</header>
+
+
+<main id="top">
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+  <div class="container hero-grid">
+
+    <div class="reveal">
+
+      <div class="eyebrow">
+
+        <span class="live-dot"></span>
+
+        <span id="heroStatus">
+          Öffnungszeiten werden geprüft…
+        </span>
+
+      </div>
+
+      <h1>
+        Kiosk
+        <br>
+        <span>Hochheim Mitte.</span>
+      </h1>
+
+      <p class="hero-copy">
+
+        Dein Kiosk in Hochheim am Main –
+        zentral gelegen, freundlich und mit
+        langen Öffnungszeiten.
+
+        Besuche uns in der Alten Malzfabrik.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <!-- GOOGLE ROUTE -->
+
+        <a
+          class="btn btn-primary"
+          href="https://www.google.com/maps/dir/?api=1&destination=Alte+Malzfabrik+1%2C+65239+Hochheim+am+Main"
+          target="_blank"
+          rel="noopener">
+
+          <span>↗</span>
+
+          Route mit Google Maps
+
+        </a>
+
+
+        <!-- GOOGLE REVIEWS -->
+
+        <a
+          class="btn btn-google"
+          href="https://share.google/1KMJcc2XhdXwXg7mr"
+          target="_blank"
+          rel="noopener">
+
+          <!-- GOOGLE LOGO -->
+
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+
+            <path
+              fill="#4285F4"
+              d="M21.6 12.23c0-.7-.06-1.37-.18-2H12v3.79h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.23c1.9-1.75 2.99-4.32 2.99-7.32z"/>
+
+            <path
+              fill="#34A853"
+              d="M12 22c2.7 0 4.96-.9 6.61-2.45l-3.23-2.51c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.59A10 10 0 0 0 12 22z"/>
+
+            <path
+              fill="#FBBC05"
+              d="M6.41 13.88A6 6 0 0 1 6.1 12c0-.65.11-1.28.31-1.88V7.53H3.07A10 10 0 0 0 2 12c0 1.61.39 3.13 1.07 4.47l3.34-2.59z"/>
+
+            <path
+              fill="#EA4335"
+              d="M12 6c1.47 0 2.79.51 3.83 1.51l2.87-2.87C16.96 2.99 14.7 2 12 2a10 10 0 0 0-8.93 5.53l3.34 2.59C7.2 7.76 9.4 6 12 6z"/>
+
+          </svg>
+
+          Google Bewertungen
+
+        </a>
+
+      </div>
+
+
+      <div class="hero-info">
+
+        <div class="info-pill">
+          ⭐ 4,1 / 5
+        </div>
+
+        <div class="info-pill">
+          25 Google-Rezensionen
+        </div>
+
+        <div class="info-pill">
+          📍 Hochheim am Main
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="hero-visual reveal">
+
+      <div class="float-rating">
+
+        <b>4,1</b>
+
+        <span class="stars">
+          ★★★★★
+        </span>
+
+        <br>
+
+        <small>
+          25 Rezensionen
+        </small>
+
+      </div>
+
+
+      <div class="photo-card">
+
+        <img
+          src="IMG_1842.png"
+          alt="Kiosk Hochheim Mitte – Außenansicht"
+          loading="eager">
+
+        <div class="photo-overlay">
+
+          <strong>
+            Alte Malzfabrik 1
+          </strong>
+
+          <small>
+            65239 Hochheim am Main
+          </small>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     OPENING HOURS
+========================= -->
+
+<section id="oeffnungszeiten">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div>
+
+        <div class="kicker">
+          Live
+        </div>
+
+        <h2>
+          Heute geöffnet?
+        </h2>
+
+      </div>
+
+      <p>
+        Die Uhrzeit und der Öffnungsstatus
+        werden automatisch in deutscher Zeit
+        aktualisiert.
+      </p>
+
+    </div>
+
+
+    <div class="open-grid">
+
+
+      <!-- LIVE CLOCK -->
+
+      <div class="card clock-card reveal">
+
+        <div>
+
+          <div class="kicker">
+            Aktuelle Zeit
+          </div>
+
+          <div
+            class="clock"
+            id="liveClock">
+            --:--:--
+          </div>
+
+          <div
+            class="date"
+            id="liveDate">
+            --
+          </div>
+
+
+          <div
+            class="status"
+            id="liveStatus">
+
+            <span class="live-dot"></span>
+
+            <span>
+              Prüfe Status…
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <p class="note">
+          Hinweis: Öffnungszeiten können an
+          Feiertagen oder besonderen Tagen abweichen.
+        </p>
+
+      </div>
+
+
+      <!-- HOURS -->
+
+      <div class="card reveal">
+
+        <div class="kicker">
+          Öffnungszeiten
+        </div>
+
+        <table
+          class="hours"
+          id="hoursTable">
+
+          <tr data-day="1">
+            <td>Montag</td>
+            <td>07:30 – 21:30</td>
+          </tr>
+
+          <tr data-day="2">
+            <td>Dienstag</td>
+            <td>07:30 – 21:30</td>
+          </tr>
+
+          <tr data-day="3">
+            <td>Mittwoch</td>
+            <td>07:30 – 21:30</td>
+          </tr>
+
+          <tr data-day="4">
+            <td>Donnerstag</td>
+            <td>07:30 – 21:30</td>
+          </tr>
+
+          <tr data-day="5">
+            <td>Freitag</td>
+            <td>07:30 – 22:00</td>
+          </tr>
+
+          <tr data-day="6">
+            <td>Samstag</td>
+            <td>07:30 – 22:00</td>
+          </tr>
+
+          <tr data-day="0">
+            <td>Sonntag</td>
+            <td>12:00 – 18:00</td>
+          </tr>
+
+        </table>
+
+        <p class="note">
+          Die angegebenen Zeiten entsprechen
+          den bereitgestellten Informationen.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     GOOGLE REVIEWS
+========================= -->
+
+<section id="bewertungen">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div>
+
+        <div class="kicker">
+          Google
+        </div>
+
+        <h2>
+          Was Kunden sagen.
+        </h2>
+
+      </div>
+
+      <p>
+        Auszug aus den bereitgestellten
+        Google-Rezensionen.
+      </p>
+
+    </div>
+
+
+    <div class="google-wrap">
+
+
+      <!-- RATING -->
+
+      <div class="card rating-card reveal">
+
+        <div class="rating-big">
+          4,1
+        </div>
+
+        <div
+          class="stars"
+          style="font-size:1.25rem">
+
+          ★★★★☆
+
+        </div>
+
+        <div class="rating-meta">
+          25 Rezensionen auf Google
+        </div>
+
+
+        <div style="margin-top:28px">
+
+
+          <div class="review-bar">
+
+            <span>5</span>
+
+            <div class="bar">
+              <i style="width:88%"></i>
+            </div>
+
+            <span>★</span>
+
+          </div>
+
+
+          <div class="review-bar">
+
+            <span>4</span>
+
+            <div class="bar">
+              <i style="width:30%"></i>
+            </div>
+
+            <span>★</span>
+
+          </div>
+
+
+          <div class="review-bar">
+
+            <span>3</span>
+
+            <div class="bar">
+              <i style="width:4%"></i>
+            </div>
+
+            <span>★</span>
+
+          </div>
+
+
+          <div class="review-bar">
+
+            <span>2</span>
+
+            <div class="bar">
+              <i style="width:7%"></i>
+            </div>
+
+            <span>★</span>
+
+          </div>
+
+
+          <div class="review-bar">
+
+            <span>1</span>
+
+            <div class="bar">
+              <i style="width:20%"></i>
+            </div>
+
+            <span>★</span>
+
+          </div>
+
+        </div>
+
+
+        <a
+          class="btn btn-google"
+          style="margin-top:25px"
+          href="https://share.google/1KMJcc2XhdXwXg7mr"
+          target="_blank"
+          rel="noopener">
+
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            aria-hidden="true">
+
+            <path
+              fill="#4285F4"
+              d="M21.6 12.23c0-.7-.06-1.37-.18-2H12v3.79h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.23c1.9-1.75 2.99-4.32 2.99-7.32z"/>
+
+            <path
+              fill="#34A853"
+              d="M12 22c2.7 0 4.96-.9 6.61-2.45l-3.23-2.51c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.59A10 10 0 0 0 12 22z"/>
+
+            <path
+              fill="#FBBC05"
+              d="M6.41 13.88A6 6 0 0 1 6.1 12c0-.65.11-1.28.31-1.88V7.53H3.07A10 10 0 0 0 2 12c0 1.61.39 3.13 1.07 4.47l3.34-2.59z"/>
+
+            <path
+              fill="#EA4335"
+              d="M12 6c1.47 0 2.79.51 3.83 1.51l2.87-2.87C16.96 2.99 14.7 2 12 2a10 10 0 0 0-8.93 5.53l3.34 2.59C7.2 7.76 9.4 6 12 6z"/>
+
+          </svg>
+
+          Alle Google-Rezensionen
+
+        </a>
+
+      </div>
+
+
+      <!-- REVIEWS -->
+
+      <div class="review-list">
+
+
+        <article class="review reveal">
+
+          <div class="review-top">
+
+            <span class="review-name">
+              Mu Fasa
+            </span>
+
+            <span class="review-age">
+              vor 2 Monaten
+            </span>
+
+          </div>
+
+          <p>
+            „Versende regelmäßig hier DPD Pakete,
+            der Inhaber ist nett und alles geht recht flott.“
+          </p>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+        </article>
+
+
+        <article class="review reveal">
+
+          <div class="review-top">
+
+            <span class="review-name">
+              Markus S.
+            </span>
+
+            <span class="review-age">
+              vor 2 Jahren
+            </span>
+
+          </div>
+
+          <p>
+            „Fast rund um die Uhr geöffnet …
+            wirklich sehr lange offen. Sehr netter
+            Besitzer, freundlich und zuvorkommend.“
+          </p>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+        </article>
+
+
+        <article class="review reveal">
+
+          <div class="review-top">
+
+            <span class="review-name">
+              Thomas Probst
+            </span>
+
+            <span class="review-age">
+              vor 2 Jahren
+            </span>
+
+          </div>
+
+          <p>
+            „Sehr guter und netter Service
+            bezüglich Paket Dienst.“
+          </p>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+        </article>
+
+
+        <article class="review reveal">
+
+          <div class="review-top">
+
+            <span class="review-name">
+              Caroline Santo
+            </span>
+
+            <span class="review-age">
+              vor 2 Jahren
+            </span>
+
+          </div>
+
+          <p>
+            „Die Abholung war unkompliziert.“
+          </p>
+
+          <div class="stars">
+            ★★★★★
+          </div>
+
+        </article>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     PHOTOS
+========================= -->
+
+<section id="fotos">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div>
+
+        <div class="kicker">
+          Einblicke
+        </div>
+
+        <h2>
+          Hochheim Mitte.
+        </h2>
+
+      </div>
+
+      <p>
+        Die bereitgestellten Bilder sind direkt
+        in die Website eingebunden.
+      </p>
+
+    </div>
+
+
+    <div class="gallery">
+
+      <img
+        class="gallery-main reveal"
+        src="IMG_1842.png"
+        alt="Kiosk Hochheim Mitte Außenansicht">
+
+      <img
+        class="reveal"
+        src="IMG_1843.png"
+        alt="Google Informationen zum Kiosk Hochheim Mitte">
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="kontakt">
+
+  <div class="container">
+
+    <div class="section-head reveal">
+
+      <div>
+
+        <div class="kicker">
+          Kontakt
+        </div>
+
+        <h2>
+          Einfach vorbeikommen.
+        </h2>
+
+      </div>
+
+      <p>
+        Hier findest du Adresse, Telefonnummer
+        und direkte Route.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <div class="card reveal">
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ⌖
+          </div>
+
+          <div>
+
+            <span>
+              Adresse
+            </span>
+
+            <strong>
+              Alte Malzfabrik 1<br>
+              65239 Hochheim am Main
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ☎
+          </div>
+
+          <div>
+
+            <span>
+              Telefon
+            </span>
+
+            <strong>
+
+              <a href="tel:+4961466077487">
+                06146 6077487
+              </a>
+
+            </strong>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <div class="card reveal">
+
+        <h3
+          style="
+            font-family:'Space Grotesk';
+            font-size:1.5rem;
+            margin-bottom:9px;
+          ">
+
+          Direkt los?
+
+        </h3>
+
+
+        <p
+          style="
+            color:var(--muted);
+            margin-bottom:22px;
+          ">
+
+          Starte die Navigation direkt mit
+          Google Maps oder rufe den Kiosk an.
+
+        </p>
+
+
+        <div
+          style="
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+          ">
+
+
+          <!-- GOOGLE ROUTE -->
+
+          <a
+            class="btn btn-primary"
+            href="https://www.google.com/maps/dir/?api=1&destination=Alte+Malzfabrik+1%2C+65239+Hochheim+am+Main"
+            target="_blank"
+            rel="noopener">
+
+            ↗ Google Route
+
+          </a>
+
+
+          <!-- PHONE -->
+
+          <a
+            class="btn btn-dark"
+            href="tel:+4961466077487">
+
+            ☎ Anrufen
+
+          </a>
+
+
+          <!-- GOOGLE -->
+
+          <a
+            class="btn btn-google"
+            href="https://share.google/1KMJcc2XhdXwXg7mr"
+            target="_blank"
+            rel="noopener">
+
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              aria-hidden="true">
+
+              <path
+                fill="#4285F4"
+                d="M21.6 12.23c0-.7-.06-1.37-.18-2H12v3.79h5.38a4.6 4.6 0 0 1-2 3.02v2.51h3.23c1.9-1.75 2.99-4.32 2.99-7.32z"/>
+
+              <path
+                fill="#34A853"
+                d="M12 22c2.7 0 4.96-.9 6.61-2.45l-3.23-2.51c-.9.6-2.05.96-3.38.96-2.6 0-4.8-1.76-5.59-4.12H3.07v2.59A10 10 0 0 0 12 22z"/>
+
+              <path
+                fill="#FBBC05"
+                d="M6.41 13.88A6 6 0 0 1 6.1 12c0-.65.11-1.28.31-1.88V7.53H3.07A10 10 0 0 0 2 12c0 1.61.39 3.13 1.07 4.47l3.34-2.59z"/>
+
+              <path
+                fill="#EA4335"
+                d="M12 6c1.47 0 2.79.51 3.83 1.51l2.87-2.87C16.96 2.99 14.7 2 12 2a10 10 0 0 0-8.93 5.53l3.34 2.59C7.2 7.76 9.4 6 12 6z"/>
+
+            </svg>
+
+            Google Bewertungen
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-brand">
+      Kiosk Hochheim Mitte
+    </div>
+
+    <div>
+      Alte Malzfabrik 1 ·
+      65239 Hochheim am Main
+    </div>
+
+    <div class="footer-links">
+
+      <a href="#top">
+        Nach oben ↑
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+/* ==================================================
+   LIVE UHRZEIT & ÖFFNUNGSSTATUS
+   EUROPE / BERLIN
+================================================== */
+
+const schedule = {
+
+  0: [["12:00","18:00"]],
+
+  1: [["07:30","21:30"]],
+
+  2: [["07:30","21:30"]],
+
+  3: [["07:30","21:30"]],
+
+  4: [["07:30","21:30"]],
+
+  5: [["07:30","22:00"]],
+
+  6: [["07:30","22:00"]]
+
+};
+
+
+const dayNames = [
+
+  "Sonntag",
+  "Montag",
+  "Dienstag",
+  "Mittwoch",
+  "Donnerstag",
+  "Freitag",
+  "Samstag"
+
+];
+
+
+function berlinParts(){
+
+  const parts = new Intl.DateTimeFormat(
+    "de-DE",
+    {
+      timeZone:"Europe/Berlin",
+
+      weekday:"long",
+
+      day:"2-digit",
+
+      month:"2-digit",
+
+      year:"numeric",
+
+      hour:"2-digit",
+
+      minute:"2-digit",
+
+      second:"2-digit",
+
+      hour12:false
+    }
+  ).formatToParts(new Date());
+
+
+  const get = type =>
+    parts.find(
+      part => part.type === type
+    )?.value;
+
+
+  return {
+
+    day:
+      dayNames.indexOf(
+        get("weekday")
+      ),
+
+    hour:
+      Number(get("hour")),
+
+    minute:
+      Number(get("minute")),
+
+    second:
+      Number(get("second")),
+
+    dayNum:
+      get("day"),
+
+    month:
+      get("month"),
+
+    year:
+      get("year")
+
+  };
+
+}
+
+
+function minutes(hm){
+
+  const [h,m] =
+    hm.split(":").map(Number);
+
+  return h * 60 + m;
+
+}
+
+
+function updateLive(){
+
+  const p = berlinParts();
+
+  const now =
+    p.hour * 60 + p.minute;
+
+  const today =
+    schedule[p.day];
+
+
+  const open =
+    today.some(
+      ([start,end]) =>
+        now >= minutes(start) &&
+        now < minutes(end)
+    );
+
+
+  const clock =
+    document.getElementById(
+      "liveClock"
+    );
+
+
+  const date =
+    document.getElementById(
+      "liveDate"
+    );
+
+
+  const status =
+    document.getElementById(
+      "liveStatus"
+    );
+
+
+  const heroStatus =
+    document.getElementById(
+      "heroStatus"
+    );
+
+
+  clock.textContent =
+
+    String(p.hour).padStart(2,"0")
+    + ":"
+    +
+    String(p.minute).padStart(2,"0")
+    + ":"
+    +
+    String(p.second).padStart(2,"0");
+
+
+  date.textContent =
+
+    `${dayNames[p.day]}, ${p.dayNum}.${p.month}.${p.year} · Deutschland`;
+
+
+  status.classList.toggle(
+    "closed",
+    !open
+  );
+
+
+  status.innerHTML = open
+
+    ?
+
+    `<span class="live-dot"></span>
+     <span>Jetzt geöffnet</span>`
+
+    :
+
+    `<span style="
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:#ff8585">
+     </span>
+     <span>Jetzt geschlossen</span>`;
+
+
+  heroStatus.textContent =
+    open
+      ? "Jetzt geöffnet"
+      : "Jetzt geschlossen";
+
+
+  document
+    .querySelectorAll(
+      "#hoursTable tr"
+    )
+    .forEach(row => {
+
+      row.classList.toggle(
+        "today",
+        Number(row.dataset.day) === p.day
+      );
+
+    });
+
+}
+
+
+updateLive();
+
+setInterval(
+  updateLive,
+  1000
+);
+
+
+/* ==================================================
+   NAVIGATION
+================================================== */
+
+const nav =
+  document.getElementById("nav");
+
+
+window.addEventListener(
+  "scroll",
+  () => {
+
+    nav.classList.toggle(
+      "scrolled",
+      window.scrollY > 20
+    );
+
+  }
+);
+
+
+/* ==================================================
+   MOBILE MENU
+================================================== */
+
+const menuBtn =
+  document.getElementById(
+    "menuBtn"
+  );
+
+
+const mobileMenu =
+  document.getElementById(
+    "mobileMenu"
+  );
+
+
+menuBtn.addEventListener(
+  "click",
+  () => {
+
+    mobileMenu.classList.toggle(
+      "open"
+    );
+
+  }
+);
+
+
+document
+  .querySelectorAll(
+    ".mobile-menu a"
+  )
+  .forEach(
+    link => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          mobileMenu.classList.remove(
+            "open"
+          );
+
+        }
+      );
+
+    }
+  );
+
+
+/* ==================================================
+   SCROLL REVEAL ANIMATION
+================================================== */
+
+const observer =
+  new IntersectionObserver(
+
+    entries => {
+
+      entries.forEach(
+        entry => {
+
+          if(entry.isIntersecting){
+
+            entry.target.classList.add(
+              "visible"
+            );
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        }
+      );
+
+    },
+
+    {
+      threshold:.12
+    }
+
+  );
+
+
+document
+  .querySelectorAll(
+    ".reveal"
+  )
+  .forEach(
+    element =>
+      observer.observe(element)
+  );
+
+</script>
+
+</body>
+</html>
